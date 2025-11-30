@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+    - name: salesforce
+      description: This is data from our enterprise Salesforce instance.
+      database: tacos
+      schema: raw
+      tables:
+          - name: trucks
+            description: Each record represents a different vehicle in our fleet.
+          - name: customers
+            description: Each record represents a different customer in our loyalty program.
+
+    - name: square
+      description: This is data from our point-of-sale system.
+      database: tacos
+      schema: raw
+      tables:
+          - name: orders
+            description: Each record represents a different food truck order.
