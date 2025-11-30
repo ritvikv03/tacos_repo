@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_salesforce__customers
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_square__orders
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_salesforce__trucks
+    columns:
+      - name: truck_id
+        data_tests:
+          - unique
+          - not_null
+      - name: make
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Airstream',
+                         'Chevrolet',
+                         'Custom',
+                         'Citroen',
+                         'Ford',
+                         'Freightliner',
+                         'Nissan',
+                         'Volkswagen']
